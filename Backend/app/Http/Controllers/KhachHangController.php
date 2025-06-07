@@ -176,6 +176,10 @@ class KhachHangController extends Controller
                         'status'    => 1,
                         'message'   => 'Đăng nhập thành công',
                         'key'       => $user->createToKen('key_khach_hang')->plainTextToken,
+                        'user'      => [
+                            'name'  => $user->ho_va_ten,
+                            'email' => $user->email
+                        ]
                     ]);
                 }
             } else {

@@ -487,7 +487,7 @@
             alt="user avatar"
           />
           <div class="user-info ps-3">
-            <p class="user-name mb-0">{{ user.name }}</p>
+            <p class="user-name mb-0">{{ user.name || 'Admin' }}</p>
             <p class="designattion mb-0">Admin</p>
           </div>
         </a>
@@ -518,8 +518,9 @@ export default {
     };
   },
   mounted() {
+    const name = localStorage.getItem("name");
     this.user = {
-      name: localStorage.getItem("name"),
+      name: name && name !== "undefined" && name !== "null" ? name : "Admin",
     };
   },
   methods: {

@@ -129,7 +129,7 @@ export default {
               this.$toast.success(res.data.message);
               this.tai_Khoan = { email: "", password: "" };
               localStorage.setItem("key_admin", res.data.key);
-              localStorage.setItem("name", res.data.name);
+              localStorage.setItem("name", res.data.user && res.data.user.name ? res.data.user.name : "Admin");
               this.$router.push("/admin/nhan-vien");
             } else {
               this.$toast.error(res.data.message);

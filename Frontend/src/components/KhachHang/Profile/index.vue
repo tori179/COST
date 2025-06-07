@@ -430,7 +430,7 @@ export default {
           if (res.data.status) {
             this.$toast.success(res.data.message);
             var noi_dung_chuyen_tien = res.data.noi_dung_chuyen_tien;
-            this.link_qr = `https://img.vietqr.io/image/970422-1910061030119-compact2.png?amount=${soTien}&addInfo=${noi_dung_chuyen_tien}&accountName=DZFULLSTACK`;
+            this.link_qr = `https://img.vietqr.io/image/970407-77779797979797-compact2.png?amount=${soTien}&addInfo=${noi_dung_chuyen_tien}&accountName=TRƯƠNG CÔNG HUỲNH NHẤT TRÍ`;
 
             // Hiển thị modal xác nhận nạp tiền
             var myModal = new bootstrap.Modal(

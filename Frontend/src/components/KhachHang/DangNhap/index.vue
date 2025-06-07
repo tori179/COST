@@ -150,8 +150,8 @@ export default {
                 password: "",
               };
               localStorage.setItem("key_khach_hang", res.data.key);
-              localStorage.setItem("name_kh", res.data.name);
-              localStorage.setItem("email_kh", res.data.email);
+              localStorage.setItem("name_kh", res.data.user && res.data.user.name ? res.data.user.name : "Khách hàng");
+              localStorage.setItem("email_kh", res.data.user && res.data.user.email ? res.data.user.email : "");
               localStorage.setItem("check_kh", res.data.status);
               window.location.reload();
             } else {

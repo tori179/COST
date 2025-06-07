@@ -51,7 +51,7 @@
               alt="user avatar"
             />
             <div class="user-info ps-3">
-              <p class="user-name mb-0">{{ user.name }}</p>
+              <p class="user-name mb-0">{{ user.name || 'Khách hàng' }}</p>
               <p class="designattion mb-0">{{ user.email }}</p>
             </div>
           </a>
@@ -102,10 +102,13 @@ export default {
     };
   },
   mounted() {
+    const name = localStorage.getItem("name_kh");
+    const email = localStorage.getItem("email_kh");
+    const check = localStorage.getItem("check_kh");
     this.user = {
-      name: localStorage.getItem("name_kh"),
-      email: localStorage.getItem("email_kh"),
-      check: localStorage.getItem("check_kh"),
+      name: name && name !== "undefined" && name !== "null" ? name : "Khách hàng",
+      email: email && email !== "undefined" && email !== "null" ? email : "",
+      check: check === "1" || check === 1 || check === true || check === "true",
     };
   },
   methods: {
